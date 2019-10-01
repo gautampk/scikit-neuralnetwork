@@ -19,7 +19,11 @@ import theano
 import sklearn.base
 import sklearn.pipeline
 import sklearn.preprocessing
-import sklearn.cross_validation
+
+try:
+    import sklearn.cross_validation
+except ModuleNotFoundError:
+    import sklearn.model_selection
 
 from .nn import NeuralNetwork, Layer, Convolution, Native, ansi
 from . import backend
